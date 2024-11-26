@@ -457,13 +457,11 @@ class KovaaksScenarioManager:
                                 shutil.move(source_path, dest_path)
                                 moved_count += 1
 
-                                # Write ID info to file
                                 id_line = f"{file}={folder_name}\n"
                                 file1.write(id_line)
 
                                 self.log(f"Moved scenario: {file}")
 
-                                # Send webhook for each scenario
                                 try:
                                     self.send_discord_webhook(id_line)
                                 except Exception as webhook_error:
@@ -520,10 +518,9 @@ class KovaaksScenarioManager:
                     time.sleep(0.5)
                     executable_path = r'"C:\Program Files (x86)\Steam\steamapps\common\FPSAimTrainer\FPSAimTrainer\Binaries\Win64\FPSAimTrainer-Win64-Shipping.exe"'
 
-                    # Use taskkill with the full path
                     subprocess.run(f'taskkill /F /IM {executable_path}', shell=True)
 
-                    # Additional fallback methods
+
                     subprocess.run('taskkill /F /IM "FPSAimTrainer.exe"', shell=True)
                     subprocess.run('taskkill /F /IM "FPSAimTrainer-Win64-Shipping.exe"', shell=True)
                     time.sleep(0.5)
