@@ -166,9 +166,6 @@ def get_palette_directory(use_default):
 
 def extract_palette_colors(file_path):
 
-    """
-    Extract RGB values for specific names from the palette file.
-    """
 
 
     with open(file_path, 'r') as file:
