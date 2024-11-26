@@ -75,10 +75,15 @@ def ask_palette_choice():
 def get_palette_directory(use_default):
 
 
-        global colors  # Modify the global colors dictionary
+        global colors
+        location_file = 'palette_file_location.txt'
 
         if use_default:
             messagebox.showinfo("Default Palette", "Using default palette colors.")
+
+            with open(location_file, 'w') as file:
+                file.write("")
+                
             return
         location_file = 'palette_file_location.txt'
 
