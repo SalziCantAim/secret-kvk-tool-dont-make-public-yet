@@ -1,3 +1,7 @@
+# TODO globally check if running in executable and then use different filepath scheme
+# ^ https://tinyurl.com/46seeusw
+# TODO Convert all if __name__...s into a function so imports can be used instead of subprocess
+# TODO Prefer Pathlib and forward slashes over os. and backwards slashes
 import getpass
 import json
 import os
@@ -358,7 +362,7 @@ def Profile_Changer():
         print(scenario)
         subprocess.run(
             ["python", "ProfileChangeHandlerTest.py", main_menu, scenario], check=True
-        )
+        ) # This might break if the user doesn't have python
 
     def list_scenarios():
         headline = tk.Label(
