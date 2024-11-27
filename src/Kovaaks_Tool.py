@@ -1,14 +1,12 @@
-import time
-import tkinter as tk
-from tkinter import filedialog, messagebox, simpledialog
-from tkinter import ttk
-from PIL import Image, ImageTk
+import getpass
+import json
+import os
 import re
 import subprocess
-import os
-import json
-import getpass
-import Autoclipping
+import tkinter as tk
+from tkinter import filedialog, messagebox, ttk
+
+from PIL import Image, ImageTk
 
 DEFAULT_BACKGROUND_COLOR = "#36323b"
 DEFAULT_PRIMARY_COLOR = "#ff5722"
@@ -356,7 +354,6 @@ def Profile_Changer():
         except Exception as e:
             messagebox.showerror("Error", f"Failed to open Profile Changer.py.\n{e}")
 
-    from tkinter import ttk
 
     def open_Profile_Changer(scenario):
         print(scenario)

@@ -1,20 +1,19 @@
-import json
-import os
-import pathlib
-import shutil
-import requests
-import webbrowser
-import tkinter as tk
-from tkinter import ttk, messagebox, filedialog, simpledialog, scrolledtext
-import time
-import threading
-import urllib.parse
-import subprocess
-import sys
 import configparser
-import unicodedata
+import json
 import logging
+import os
+import shutil
+import subprocess
+import threading
+import time
+import tkinter as tk
+import unicodedata
+import urllib.parse
+from tkinter import filedialog, messagebox, scrolledtext, ttk
+
 import psutil
+import requests
+
 import Kovaaks_Tool
 
 

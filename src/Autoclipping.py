@@ -1,20 +1,18 @@
+import getpass
 import json
 import os
+import re
+import shutil
+import subprocess
 import sys
 import time
 import tkinter as tk
-from sys import prefix
-from tkinter import ttk, filedialog, messagebox
-from watchdog.observers import Observer
-from watchdog.events import FileSystemEventHandler
+from tkinter import filedialog, messagebox
+
 import obsws_python as obs
-import getpass
-from datetime import datetime
-import subprocess
 import psutil
-import re
-import glob
-import shutil
+from watchdog.events import FileSystemEventHandler
+from watchdog.observers import Observer
 
 
 class ScoreTracker:
@@ -102,7 +100,7 @@ class ScoreTracker:
 class AutoClipper:
     def __init__(self):
         self.user = getpass.getuser()
-        self.stats_dir = rf"C:\Program Files (x86)\Steam\steamapps\common\FPSAimTrainer\FPSAimTrainer\stats"
+        self.stats_dir = r"C:\Program Files (x86)\Steam\steamapps\common\FPSAimTrainer\FPSAimTrainer\stats"
         self.parsed_stats_dir = os.path.join(self.stats_dir, "parsed_scens")
         self.scenarios = set()
         self.observer = None
@@ -673,7 +671,7 @@ def edit_websocket_config():
             if any(proc.name() == "obs64.exe" for proc in psutil.process_iter()):
                 messagebox.showerror(
                     "Restart OBS",
-                    f"Please restart OBS to use the Auto Clipping function!",
+                    "Please restart OBS to use the Auto Clipping function!",
                 )
             else:
                 with open(flag_path, "w") as flag_file:

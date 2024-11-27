@@ -1,12 +1,10 @@
-import os
-import shutil
-import tkinter as tk
-from tkinter import simpledialog, Toplevel, Label, Entry, Button, messagebox, filedialog
-import threading
-import sys
-import re
-import time
 import getpass
+import os
+import re
+import shutil
+import sys
+import tkinter as tk
+from tkinter import Button, Label, Toplevel, filedialog, messagebox, simpledialog
 
 monitored_directory = r"C:\Program Files (x86)\Steam\steamapps\common\FPSAimTrainer\FPSAimTrainer\Saved\SaveGames\Scenarios"
 presets = {}
@@ -67,7 +65,7 @@ def ask_palette_choice():
         label1.pack(pady=20)
         label = tk.Button(
             choice_window1,
-            text=rf"Okay",
+            text=r"Okay",
             bg=DEFAULT_BACKGROUND_COLOR,
             fg=TEXT_COLOR,
             font=("Helvetica", 14),

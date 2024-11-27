@@ -1,6 +1,6 @@
-import sys
-import subprocess
 import getpass
+import subprocess
+import sys
 
 
 def get_scenario_directory():
@@ -25,10 +25,10 @@ def get_scenario_directory():
     return Folder_directory
 
 
-import tkinter as tk
-from tkinter import filedialog, messagebox
 import os
 import re
+import tkinter as tk
+from tkinter import filedialog, messagebox
 
 DEFAULT_BACKGROUND_COLOR = "#36323b"
 DEFAULT_PRIMARY_COLOR = "#ff5722"
