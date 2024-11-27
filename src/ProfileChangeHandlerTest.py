@@ -1,6 +1,10 @@
 import getpass
+import os
+import re
 import subprocess
 import sys
+import tkinter as tk
+from tkinter import filedialog, messagebox
 
 
 def get_scenario_directory():
@@ -24,11 +28,6 @@ def get_scenario_directory():
             return None
     return Folder_directory
 
-
-import os
-import re
-import tkinter as tk
-from tkinter import filedialog, messagebox
 
 DEFAULT_BACKGROUND_COLOR = "#36323b"
 DEFAULT_PRIMARY_COLOR = "#ff5722"
@@ -299,7 +298,7 @@ def get_current_values(profile, path):
 
 
 def count_button_calls():
-    profile_button_count = len(character_profiles)
+    profile_button_count = len(character_profiles)  # noqa: F821
     explicit_button_count = 2
     total_button_count = profile_button_count + explicit_button_count
     return total_button_count
@@ -310,7 +309,7 @@ def open_scenario_editor(scenario):
     fixed_width = 400
     current_file_path = ""
     print("hi1")
-    new_file_path = ""
+    new_file_path = ""  # Why isn't it made global here?
     path = rf"C:\Program Files (x86)\Steam\steamapps\common\FPSAimTrainer\FPSAimTrainer\Saved\SaveGames\Scenarios\{scenario}"
     root.config(bg=BACKGROUND_COLOR)
     """Open a new window to edit the selected scenario."""
@@ -345,7 +344,7 @@ def open_scenario_editor(scenario):
         global new_file_path
 
         with open("temp_scenario.txt") as f:
-            first_line = f.readline()
+            first_line = f.readline()  # Isn't used?
         header = tk.Label(
             root,
             text=f"Save changes for {scenario}",
@@ -359,7 +358,7 @@ def open_scenario_editor(scenario):
         form_frame.pack(fill="y")
         labels = "Enter new Name:"
         entries = {}
-        bg_color = BACKGROUND_COLOR
+        bg_color = BACKGROUND_COLOR  # noqa: F841
         tk.Label(
             form_frame,
             text=labels,
@@ -509,7 +508,7 @@ def open_scenario_editor(scenario):
 
 
 def edit_attributes_dialog(selected_profile, editor_frame):
-    counter = count_button_calls()
+    counter = count_button_calls()  # noqa: F841
     header = tk.Label(
         root,
         text=f"Edit Attributes for {selected_profile}",

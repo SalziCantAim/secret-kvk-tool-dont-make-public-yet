@@ -195,7 +195,7 @@ class AutoClipper:
             if self.obs_client:
                 try:
                     self.obs_client.save_replay_buffer()
-                except:
+                except:  # Shouldn't use a bare except here (I'll find the error later)
                     try:
                         self.obs_client.trigger_media_input_action(
                             input_name="ReplayBuffer", action_name="ReplayBuffer.Save"
@@ -687,7 +687,8 @@ def edit_websocket_config():
         print(f"An unexpected error occurred: {e}")
 
 
-if __name__ == "__main__":
+if __name__ == "__main__":  # Could  be less bloated, considering moving to a function
+    # Wouldn't then have to use subprocess (could just import)
     root = tk.Tk()
     root.withdraw()
     stats_dir = r"C:\Program Files (x86)\Steam\steamapps\common\FPSAimTrainer\FPSAimTrainer\stats"

@@ -354,7 +354,6 @@ def Profile_Changer():
         except Exception as e:
             messagebox.showerror("Error", f"Failed to open Profile Changer.py.\n{e}")
 
-
     def open_Profile_Changer(scenario):
         print(scenario)
         subprocess.run(
@@ -532,7 +531,7 @@ def create_playlist():
         return Folder_directory
 
     selected_scenarios = {}
-    filtered_scenarios = []
+    filtered_scenarios = []  # Should be made global here
 
     def update_chosen_list(frame):
         for widget in frame.winfo_children():
