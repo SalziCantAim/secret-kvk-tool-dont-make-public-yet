@@ -494,7 +494,7 @@ def create_playlist():
     clear_window()
 
     def get_scenario_directory():
-        location_file = "Scenario_Folder_location.txt"
+        location_file = "./src/config/Scenario_Folder_location.txt"
 
         if os.path.exists(location_file):
             with open(location_file, "r") as file:
@@ -513,7 +513,7 @@ def create_playlist():
         return scenario_directory
 
     def get_Playlist_directory():
-        location_file = "playlist_folder_location.txt"
+        location_file = "./src/config/playlist_folder_location.txt"
 
         if os.path.exists(location_file):
             with open(location_file, "r") as file:

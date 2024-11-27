@@ -1,3 +1,7 @@
+# Person specific configs
+
+src/config/*.txt
+
 # ruff cache
 
 .ruff_cache/
