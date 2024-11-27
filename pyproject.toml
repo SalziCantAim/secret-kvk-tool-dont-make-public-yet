@@ -1,3 +1,16 @@
+[project]
+name = "secret-kvk-tool-dont-make-public-yet"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = ["obsws_python==1.7.0",
+"Pillow==11.0.0",
+"psutil==6.1.0",
+"Requests==2.32.3",
+"watchdog==6.0.0"
+]
+
 include = ["src/**/*.py"]
 fix = true
 cache-dir = ".ruff_cache/"
@@ -39,7 +52,7 @@ indent-width = 4
 # Assume Python 3.11
 target-version = "py311"
 
-[lint]
+[tool.lint]
 # Enable Pyflakes (`F`) and a subset of the pycodestyle (`E`)  codes by default.
 # Unlike Flake8, Ruff doesn't enable pycodestyle warnings (`W`) or
 # McCabe complexity (`C901`) by default.
@@ -53,12 +66,12 @@ unfixable = []
 # Allow unused variables when underscore-prefixed.
 dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
 
-[lint.pydocstyle]
+[tool.ruff.lint.pydocstyle]
 
 # Use Google-style docstrings.
 convention = "google"
 
-[format]
+[tool.ruff.format]
 # Like Black, use double quotes for strings.
 quote-style = "double"
 
