@@ -198,7 +198,7 @@ def Main_Menu():
         elif action == "Change Palette folder":
             ask_palette_choice()
     try:
-        logo_path = "kovaak_image.jpg"
+        logo_path = "assets/kovaak_image.jpg"
         img = Image.open(logo_path)
         root.logo_image = ImageTk.PhotoImage(img)
         logo_label = tk.Label(root, image=root.logo_image, bg=BACKGROUND_COLOR)
