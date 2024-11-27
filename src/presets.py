@@ -54,7 +54,7 @@ def ask_palette_choice():
         choice_window1.configure(bg=DEFAULT_BACKGROUND_COLOR)
         label1 = tk.Label(
             choice_window1,
-            text=rf'the Palette.ini file is normally found at{"\n"} "C:\Users\{user}\AppData\Local\FPSAimTrainer\Saved\Config\WindowsNoEditor"',
+            text=f'the Palette.ini file is normally found at\n "C:/Users/{user}/AppData/Local/FPSAimTrainer/Saved/Config/WindowsNoEditor"',
             bg=DEFAULT_BACKGROUND_COLOR,
             fg=TEXT_COLOR,
             font=("Helvetica", 13),
