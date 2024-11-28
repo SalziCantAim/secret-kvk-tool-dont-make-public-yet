@@ -97,3 +97,9 @@ docstring-code-format = false
 # This only has an effect when the `docstring-code-format` setting is
 # enabled.
 docstring-code-line-length = "dynamic"
+
+[dependency-groups]
+dev = [
+    "pyinstaller>=6.11.1",
+    "ruff>=0.8.0",
+]

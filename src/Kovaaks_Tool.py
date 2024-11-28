@@ -9,6 +9,7 @@ import re
 import subprocess
 import tkinter as tk
 from tkinter import filedialog, messagebox, ttk
+from pathlib import Path
 
 from PIL import Image, ImageTk
 
@@ -72,7 +73,7 @@ def ask_palette_choice():
 
 def get_palette_directory(use_default):
     global colors
-    location_file = "./src/config/palette_file_location.txt"
+    location_file = "./config/palette_file_location.txt"
 
     if use_default:
         messagebox.showinfo("Default Palette", "Using default palette colors.")
@@ -81,7 +82,7 @@ def get_palette_directory(use_default):
             file.write("")
 
         return
-    location_file = "./src/config/palette_file_location.txt"
+    location_file = "./config/palette_file_location.txt"
 
     if os.path.exists(location_file):
         with open(location_file, "r") as file:
@@ -190,7 +191,7 @@ def Main_Menu():
             ask_palette_choice()
 
     try:
-        logo_path = "./src/assets/kovaak_image.jpg"
+        logo_path = "./assets/kovaak_image.jpg"
         img = Image.open(logo_path)
         root.logo_image = ImageTk.PhotoImage(img)
         logo_label = tk.Label(root, image=root.logo_image, bg=BACKGROUND_COLOR)
@@ -240,7 +241,7 @@ def Main_Menu():
 
 
 def change_playlist_folder():
-    location_file = "./src/config/playlist_folder_location.txt"
+    location_file = "./config/playlist_folder_location.txt"
     Folder_directory = create_playlist_folder()
 
     with open(location_file, "r") as file:
@@ -261,7 +262,7 @@ def change_playlist_folder():
 
 
 def create_playlist_folder():
-    location_file = "./src/config/playlist_folder_location.txt"
+    location_file = "./config/playlist_folder_location.txt"
 
     if os.path.exists(location_file):
         with open(location_file, "r") as file:
@@ -283,7 +284,7 @@ def create_playlist_folder():
 
 
 def change_scenario_folder():
-    location_file = "./src/config/Scenario_folder_location.txt"
+    location_file = "./config/Scenario_folder_location.txt"
     Folder_directory = get_scenario_directory()
 
     with open(location_file, "r") as file:
@@ -306,7 +307,7 @@ def change_scenario_folder():
 
 
 def get_scenario_directory():
-    location_file = "./src/config/Scenario_folder_location.txt"
+    location_file = "./config/Scenario_folder_location.txt"
 
     if os.path.exists(location_file):
         with open(location_file, "r") as file:
@@ -362,7 +363,7 @@ def Profile_Changer():
         print(scenario)
         subprocess.run(
             ["python", "ProfileChangeHandlerTest.py", main_menu, scenario], check=True
-        ) # This might break if the user doesn't have python
+        )  # This might break if the user doesn't have python
 
     def list_scenarios():
         headline = tk.Label(
@@ -497,7 +498,7 @@ def create_playlist():
     clear_window()
 
     def get_scenario_directory():
-        location_file = "./src/config/Scenario_Folder_location.txt"
+        location_file = "./config/Scenario_Folder_location.txt"
 
         if os.path.exists(location_file):
             with open(location_file, "r") as file:
@@ -516,7 +517,7 @@ def create_playlist():
         return scenario_directory
 
     def get_Playlist_directory():
-        location_file = "./src/config/playlist_folder_location.txt"
+        location_file = "./config/playlist_folder_location.txt"
 
         if os.path.exists(location_file):
             with open(location_file, "r") as file:
@@ -909,7 +910,10 @@ def create_playlist():
 
 if __name__ == "__main__":
     main_menu = os.path.basename(__file__)
-    location_file = "./src/config/palette_file_location.txt"
+    os.chdir(Path(os.getcwd()) / Path(os.path.dirname(__file__)))
+    print(os.getcwd)
+
+    location_file = "./config/palette_file_location.txt"
 
     if not os.path.exists(location_file):
         ask_palette_choice()

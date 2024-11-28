@@ -10,15 +10,21 @@ if you just want to try the .exe just download the repo and only use the "the ex
 
 ## Setup
 
-Enter the following command to
-1) Install uv
-2) Create a venv
-3) Install all python packages into it
+1) Install [taskfile](https://taskfile.dev/installation/)
+2) Install [uv](https://docs.astral.sh/uv/getting-started/installation/)
 
-    start setup.bat
+Then run:
+
+    task setup
 
 ## How to build
 
-Make sure you have robocopy and then run the following command:
+Run the following command:
 
-    start compile.bat
+    task build
+
+## How to run in developers mode (without compiling)
+
+Run the following command:
+
+    task run

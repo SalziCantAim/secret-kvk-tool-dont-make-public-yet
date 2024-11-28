@@ -1,0 +1,35 @@
+version: "3.17"
+
+tasks:
+
+    run:
+        cmds:
+            - uv run src/Kovaaks_Tool.py -OO
+
+    build:
+        aliases: [compile]
+        deps: [format]
+        cmds:
+            - defer: uv run scripts/build.py -OO
+
+    check:
+        deps: [lint, format]
+
+    format:
+        cmds:
+            - uv run ruff format --config pyproject.toml
+
+    lint:
+        cmds:
+            - uv run ruff check --config pyproject.toml
+    
+    lock:
+        cmds:
+            - uv lock
+            - uv sync
+
+    setup:
+        cmds:
+            - uv venv
+            - uv sync
+            - uv lock
