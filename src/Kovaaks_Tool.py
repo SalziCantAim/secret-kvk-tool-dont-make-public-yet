@@ -363,7 +363,7 @@ def Profile_Changer():
         print(scenario)
         subprocess.run(
             ["python", "ProfileChangeHandlerTest.py", main_menu, scenario], check=True
-        ) # This might break if the user doesn't have python
+        )  # This might break if the user doesn't have python
 
     def list_scenarios():
         headline = tk.Label(
@@ -912,7 +912,7 @@ if __name__ == "__main__":
     main_menu = os.path.basename(__file__)
     os.chdir(Path(os.getcwd()) / Path(os.path.dirname(__file__)))
     print(os.getcwd)
-    
+
     location_file = "./config/palette_file_location.txt"
 
     if not os.path.exists(location_file):
